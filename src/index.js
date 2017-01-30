@@ -22,7 +22,7 @@ module.exports = function mjml (mjmlEngine) {
       var render
 
       try {
-        render = mjmlEngine.mjml2html(file.contents.toString())
+        render = mjmlEngine.mjml2html(file.contents.toString(), {minify: true})
       } catch (e) {
         this.emit('error', new GulpError(NAME, e))
         return callback()
